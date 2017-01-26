@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Favorite Books</title>
+    <!-- add css file -->
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Padauk" rel="stylesheet">
+
+  </head>
+  <body ng-app="BestBookApp">
+    <h1>WBB: Worlds Best Books</h1>
+
+    <!-- Section where we can add new best book -->
+    <section class="add" ng-controller="NewBookController">
+      <h2>Add New Book</h2>
+      <p>Title</p>
+      <input type="text" ng-model="title" placeholder="title">
+
+
+      <p>Author</p>
+      <input type="text" ng-model="author" placeholder="author">
+
+
+      <p>Price</p>
+      <input type="number" ng-model="price" placeholder="price">
+      <br>
+      <button id="addbtn" type="button" ng-click="newBook()">Add Book</button>
+    </section>
+
+    <!-- section to show all books -->
+    <section ng-controller="ShowBooksController">
+      <ul class="contain">
+        <li class="bookli" ng-repeat="currentBook in books">
+          <!-- <img ng-click="" ng-src="{{ currentBook.cover }}"> -->
+          <h3 ng-hide ="currentBook.isFavorite">{{ currentBook.title }}</h3>
+          <h3 ng-show="currentBook.isFavorite" class="redletter">{{ currentBook.title }}</h3>
+          <p> Written by {{ currentBook.author }}</p>
+
+          <p ng-show="currentBook.isFavorite" class="showRed"><i class="fa fa-heart" aria-hidden="true"></i>
+          </p>
+
+          <button ng-hide ="currentBook.isFavorite" ng-click="favoriteBook(currentBook)" id="fave">Fave?</button>
+        </li>
+      </ul>
+
+    </section>
+
+    <script src="https://use.fontawesome.com/7fb1b7bdac.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <!-- add js file -->
+    <script src="app.js" type="text/javascript">
+    </script>
+  </body>
+</html>

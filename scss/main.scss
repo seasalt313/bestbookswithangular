@@ -1,0 +1,67 @@
+// include foundation
+
+@import "../node_modules/foundation-sites/scss/foundation";
+
+@include foundation-global-styles;
+@include foundation-grid;
+
+body {
+  background-image: url("/Users/mariamqasim/Desktop/tiy/angular/wbb/images/books.jpg");
+  color: beige;
+  border: 2px solid maroon;
+  padding: 20px;
+  margin: 50px;
+  text-align: center;
+  font-family: 'Padauk', sans-serif;
+  h2, h1 {
+    color: maroon;
+  }
+
+}
+
+.add {
+  text-align: left;
+  color: beige;
+}
+
+#addbtn {
+  margin: 20px;
+  padding: 20px;
+  font-size: 20px;
+  border: 3px solid beige;
+  background-color: maroon;
+  color: beige;
+  font-family: 'Padauk', sans-serif;
+  border-radius: 6px;
+}
+
+#fave {
+  margin: 10px;
+  padding: 20px;
+  border: 2px solid maroon;
+  background-color: beige;
+  font-family: 'Padauk', sans-serif;
+  border-radius: 6px;
+  font-size: 20px;
+}
+
+#fave:hover {
+  background-color: maroon;
+  color: beige;
+}
+
+.contain {
+  @include grid-row();
+  .showRed {
+    color: maroon;
+    font-size: 27px;
+  }
+  .redletter {
+    color: maroon;
+  }
+  .bookli {
+    @include grid-column(6);
+    border-bottom: 1px solid beige;
+    list-style: none;
+  }
+}
